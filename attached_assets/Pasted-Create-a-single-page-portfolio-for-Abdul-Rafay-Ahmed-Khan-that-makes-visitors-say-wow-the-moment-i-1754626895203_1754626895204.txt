@@ -1,0 +1,47 @@
+Create a single-page portfolio for Abdul Rafay Ahmed Khan that makes visitors say “wow” the moment it loads.
+	1.	Opening gateway (dual persona)
+• The first thing people see is a dramatic 3-D stage holding two animated avatarcenterbdul Rafay.
+• Avatar one, labeled “Software Engineer”, is shown typing in mid-air while shimmering lines of code swirl around him.
+• Avatar two, labeled “Data Engineer”, is shown guiding floating cubes of data that stream into glowing charts.
+• Avatars gently pulse, enlarge when hovered, and when clicked the camera dives forward with a burst of particles and reveals the matching persona section.
+	2.	Common layout inside each persona
+• A “Back to personas” button floats quietly in a corner throughout the journey.
+• Sections appear one after another with smooth scroll-snap and subtle parallax stars in the background:
+– About Me vignette (short text beside a miniature 3-D work scene)
+– Tech Stack showcase (logos gliding or orbiting in motion)
+– Experience timeline (cards that pop forward as you scroll)
+– Projects wall (tilting cards that show GIF previews on hover)
+– Contact drawer (slides out when the visitor clicks a glowing icon)
+	3.	Software-Engineer persona details
+• About Me: Master’s student in Computer Science at CU-Boulder who loves crafting AI-powered products that feel magical and fast.
+• Tech Stack highlights: Python, JavaScript, React, Flask, Django, SQL, JWT auth, thorough unit testing, cloud deployments.
+• Key experience:
+– Volga Partners — engineered an AI SaaS that handles 10 000+ user queries a day and cut UI load time by about 25 %.
+– Meta — collaborated with researchers to launch new LLM features while reducing query latency roughly 35 %.
+• Signature projects:
+– DataBuff — full-stack web app that auto-generates Pandas code for data cleaning and earned 85 %+ test coverage.
+– Raasta Trip Booking — travel booking platform with advanced search filters and a well-designed PostgreSQL schema.
+• Community note: President Academics of the AI Community of Pakistan, organized coding challenges for hundreds of participants.
+• Contact drawer: show phone (+1 303 961-5167), email (rafay.ahmedkhan@colorado.edu), LinkedIn, GitHub, and a live demo link as softly glowing icons.
+	4.	Data-Engineer persona details
+• About Me: Same academic background, but focused on turning massive data sets into realtime insight and building reliable pipelines.
+• Tech Stack highlights: Python, SQL, Spark, Airflow, dbt, BigQuery, Presto, Tableau, Snowflake, Docker/Kubernetes.
+• Key experience:
+– Meta — built batch pipelines that process terabytes daily and improved LLM recall by 9 % while cutting query latency 35 %.
+– Infolyze Solutions — optimized ETL for six client projects, trimming integration time 30 % and boosting retrieval speed 20 %.
+• Signature projects:
+– MetaPulse — NYC-Taxi data pipeline and dashboarding system handling 1.2 million trips.
+– DataBuff — repurpose description above but framed as a zero-code data-science enabler for analysts.
+• Community note: Same leadership credentials, emphasizing national ML-oriented coding competitions.
+• Contact drawer: identical links and style as the Software-Engineer track.
+	5.	Motion & delight
+• Section titles ripple softly into place.
+• Tech-stack logos periodically burst into particles then reform.
+• Key numbers (like “9 % recall uplift” or “10 000+ queries/day”) count up when they scroll into view.
+• The projects wall feels like a sleek gallery; cards float slightly and rearrange smoothly on smaller screens.
+• When the contact drawer opens, it leaves a short comet tail and closes with a gentle bounce.
+	6.	Mobile and accessibility
+• Provide simplified, high-quality static images if a device can’t run heavy motion smoothly.
+• Every feature is keyboard-friendly, color-contrast compliant, and has meaningful alt text.
+	7.	Overall tone
+• Bold futuristic visuals, clear and concise copy, plenty of breathing room so the animations and numbers take center stage.
