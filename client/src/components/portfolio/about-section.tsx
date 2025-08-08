@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import profileImage from "@assets/Screenshot 2022-06-29 at 3.33.40 AM_1754628874300.png";
+import dataResumeUrl from "@assets/Resume_1754631812019.pdf";
+import softwareResumeUrl from "@assets/SWE_Resume_1754631812020.pdf";
 
 interface AboutSectionProps {
   persona: 'software' | 'data';
@@ -52,7 +54,8 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
             initial={{ y: 30, opacity: 0 }}
             animate={isVisible ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className={`text-5xl font-bold bg-gradient-to-r ${content.gradient} bg-clip-text text-transparent`}
+            className="text-5xl font-bold text-green-400"
+            style={{ textShadow: '0 0 20px rgb(34 197 94)' }}
           >
             {content.title}
           </motion.h2>
@@ -79,13 +82,65 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
                 animate={isVisible ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className={`bg-${badge.color === 'yellow' ? 'yellow' : badge.color}-500/20 px-4 py-2 rounded-full border border-${badge.color === 'yellow' ? 'yellow' : badge.color}-500/30 ${badge.text === '4.0 CGPA' ? 'animate-pulse-glow' : ''}`}
+                className={`bg-green-500/20 px-4 py-2 rounded-full border border-green-500/30 ${badge.text === '4.0 CGPA' ? 'animate-pulse-glow' : ''}`}
               >
-                <span className={`text-${badge.color === 'yellow' ? 'yellow' : badge.color}-400 ${badge.text === '4.0 CGPA' ? 'font-bold' : ''}`}>
+                <span className={`text-green-300 ${badge.text === '4.0 CGPA' ? 'font-bold' : ''}`}>
                   {badge.icon} {badge.text}
                 </span>
               </motion.div>
             ))}
+          </motion.div>
+          
+          {/* Download Resume Button */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={isVisible ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="pt-4"
+          >
+            <motion.a
+              href={persona === 'software' ? softwareResumeUrl : dataResumeUrl}
+              download={persona === 'software' ? "Abdul_Rafay_SWE_Resume.pdf" : "Abdul_Rafay_Data_Resume.pdf"}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -3,
+                boxShadow: "0 0 25px rgba(34, 197, 94, 0.6)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold text-lg rounded-xl transition-all duration-300 border border-green-400/30 shadow-lg"
+              style={{ 
+                textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+                boxShadow: '0 4px 15px rgba(34, 197, 94, 0.3)'
+              }}
+            >
+              <motion.div
+                animate={{ 
+                  y: [0, -2, 0],
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="text-2xl"
+              >
+                📄
+              </motion.div>
+              <span>Download {persona === 'software' ? 'Software' : 'Data'} Resume</span>
+              <motion.div
+                animate={{ 
+                  x: [0, 3, 0],
+                }}
+                transition={{ 
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="text-xl"
+              >
+                ⬇️
+              </motion.div>
+            </motion.a>
           </motion.div>
         </motion.div>
         
@@ -101,7 +156,7 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
             alt={`${persona} workspace`}
             className="rounded-2xl shadow-2xl w-full h-auto"
           />
-          <div className={`absolute inset-0 bg-gradient-to-t ${persona === 'software' ? 'from-blue-500/20' : 'from-violet-500/20'} to-transparent rounded-2xl`} />
+          <div className="absolute inset-0 bg-gradient-to-t from-green-500/20 to-transparent rounded-2xl" />
         </motion.div>
       </div>
     </section>
