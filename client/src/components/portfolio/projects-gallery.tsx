@@ -105,12 +105,13 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
           initial={{ y: 50, opacity: 0 }}
           animate={isVisible ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className={`text-5xl font-bold mb-16 text-center bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}
+          className="text-5xl font-bold mb-16 text-center text-green-400"
+          style={{ textShadow: '0 0 20px rgb(34 197 94)' }}
         >
           Featured Projects
         </motion.h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -124,7 +125,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
               <motion.div
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.3 }}
-                className={`glass-card rounded-2xl overflow-hidden hover:glow-${persona === 'software' ? 'blue' : 'violet'} transition-all duration-300`}
+                className="glass-card rounded-2xl overflow-hidden hover:glow-green transition-all duration-300"
               >
                 <div className="relative overflow-hidden">
                   <motion.img
@@ -132,7 +133,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
                     transition={{ duration: 0.6 }}
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-40 object-cover"
+                    className="w-full h-48 object-cover"
                   />
                   
                   {/* Hover Overlay */}
@@ -155,43 +156,34 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
                   </motion.div>
                 </div>
                 
-                <div className="p-4">
+                <div className="p-6">
                   <motion.h3
-                    className="text-lg font-semibold text-slate-50 mb-2"
+                    className="text-xl font-semibold text-slate-50 mb-3"
                     layoutId={`title-${project.title}`}
                   >
                     {project.title}
                   </motion.h3>
                   
                   <motion.p
-                    className="text-slate-300 mb-4 text-sm line-clamp-3"
+                    className="text-slate-300 mb-6 text-base leading-relaxed"
                     layoutId={`description-${project.title}`}
                   >
                     {project.description}
                   </motion.p>
                   
                   <motion.div
-                    className="flex flex-wrap gap-2 mb-4"
+                    className="flex flex-wrap gap-2 mb-6"
                     layoutId={`tags-${project.title}`}
                   >
-                    {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                    {project.tags.map((tag, tagIndex) => (
                       <motion.span
                         key={tagIndex}
                         whileHover={{ scale: 1.05 }}
-                        className={`${
-                          persona === 'software' 
-                            ? tagIndex === 0 ? 'bg-blue-500/20 text-blue-400' : 'bg-violet-500/20 text-violet-400'
-                            : tagIndex === 0 ? 'bg-violet-500/20 text-violet-400' : 'bg-cyan-500/20 text-cyan-400'
-                        } px-2 py-1 rounded-full text-xs`}
+                        className="bg-green-500/20 text-green-300 border border-green-500/30 px-3 py-1 rounded-full text-sm"
                       >
                         {tag}
                       </motion.span>
                     ))}
-                    {project.tags.length > 3 && (
-                      <span className="text-slate-400 text-xs px-2 py-1">
-                        +{project.tags.length - 3} more
-                      </span>
-                    )}
                   </motion.div>
                   
                   {/* Action Buttons */}
@@ -221,7 +213,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className={`flex-1 bg-gradient-to-r ${persona === 'software' ? 'from-blue-500 to-violet-500' : 'from-violet-500 to-cyan-500'} hover:from-blue-600 hover:to-violet-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2`}
+                        className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2"
                       >
                         <i className="fas fa-external-link-alt" />
                         Live Demo
