@@ -1,8 +1,8 @@
-# Abdul Rafay Ahmed Khan Portfolio
+# My Portfolio
 
 ## Overview
 
-This is a single-page portfolio application for Abdul Rafay Ahmed Khan that showcases a dual-persona concept - Software Engineer and Data Engineer. The application features a 3D gateway with animated avatars that transition into detailed persona sections with smooth animations, parallax effects, and interactive elements. Built with React, TypeScript, and modern web technologies, it creates an immersive "wow" experience for visitors.
+This is a single-page portfolio application for me that showcases a dual-persona concept - Software Engineer and Data Engineer. The application features a 3D gateway with animated avatars that transition into detailed persona sections with smooth animations, parallax effects, and interactive elements. Built with React, TypeScript, and modern web technologies, it creates an immersive "wow" experience for visitors.
 
 ## System Architecture
 
