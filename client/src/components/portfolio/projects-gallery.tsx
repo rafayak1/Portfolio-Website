@@ -29,7 +29,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
       image: databuffImage,
       tags: ["Flask", "React", "AI", "Google Cloud", "OAuth", "Pandas", "OpenRouter"],
       hover: "🤖 AI-powered data magic...",
-      github: "https://github.com/rafayak1/bda-project",
+      github: "https://github.com/rafayak1/DataBuff",
     },
     {
       title: "Raasta Trip Booking",
@@ -48,7 +48,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
       image: databuffImage,
       tags: ["Flask", "AI", "Data Science", "Pandas", "Visualization", "Google Cloud", "Firestore"],
       hover: "🤖 AI-powered data magic...",
-      github: "https://github.com/rafayak1/bda-project",
+      github: "hhttps://github.com/rafayak1/DataBuff",
     },
     {
       title: "MetaPulse",
