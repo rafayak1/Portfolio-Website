@@ -17,14 +17,6 @@ interface ContactItem {
 export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
   const contactItems: ContactItem[] = [
     {
-      type: "Phone",
-      label: "+1 303 961-5167",
-      value: "Call me",
-      icon: "fas fa-phone",
-      color: "blue",
-      href: "tel:+13039615167",
-    },
-    {
       type: "Email",
       label: "rafay.ahmedkhan@colorado.edu",
       value: "Send email",
@@ -38,7 +30,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
       value: "Professional network",
       icon: "fab fa-linkedin",
       color: "cyan",
-      href: "#",
+  href: "https://linkedin.com/in/rafaykhan11",
     },
     {
       type: "GitHub",
@@ -46,7 +38,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
       value: "Open source projects",
       icon: "fab fa-github",
       color: "emerald",
-      href: "#",
+  href: "https://github.com/rafayak1",
     },
     {
       type: "Live Demo",
@@ -54,7 +46,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
       value: "Interactive showcase",
       icon: "fas fa-external-link-alt",
       color: "orange",
-      href: "#",
+  href: "https://raasta.com.pk",
     },
   ];
 
@@ -110,12 +102,14 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
                   <motion.a
                     key={item.type}
                     href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.1 * index + 0.4 }}
                     whileHover={{ scale: 1.02, x: 5 }}
                     whileTap={{ scale: 0.98 }}
-                    className="contact-item flex items-center gap-4 p-4 rounded-xl glass-card hover:bg-slate-700/50 transition-all duration-300 group block"
+                    className="contact-item flex items-center gap-4 p-4 rounded-xl glass-card hover:bg-slate-700/50 transition-all duration-300 group"
                   >
                     <motion.div
                       whileHover={{ rotate: 360 }}
@@ -139,23 +133,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
                 ))}
               </div>
               
-              {/* Footer */}
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="mt-8 text-center p-4 glass-card rounded-xl"
-              >
-                <p className="text-slate-400 text-sm">President Academics</p>
-                <p className="text-slate-300 font-medium">AI Community of Pakistan</p>
-                <motion.div
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="mt-2"
-                >
-                  <span className="text-xl">🏆</span>
-                </motion.div>
-              </motion.div>
+              {/* Footer removed per request */}
             </div>
           </motion.div>
         </>
