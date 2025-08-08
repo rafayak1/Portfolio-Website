@@ -70,6 +70,5 @@ This is a single-page portfolio application for me that showcases a dual-persona
 - **Query Management**: TanStack React Query for server state
 
 ### Third-Party Integrations
-- **Replit Platform**: Custom Vite plugins for Replit development environment
 - **Font Services**: Google Fonts CDN for web fonts
 - **Icon Libraries**: Font Awesome CDN for social and brand icons
