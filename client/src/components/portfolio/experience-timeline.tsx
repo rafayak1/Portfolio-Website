@@ -10,7 +10,7 @@ interface ExperienceTimelineProps {
 interface Experience {
   company: string;
   role: string;
-  description: string;
+  description: string[];
   tags: string[];
   icon: string;
   metrics?: { value: number; label: string; suffix?: string }[];
@@ -23,7 +23,12 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
     {
       company: "Meta",
       role: "Data Engineer Intern",
-      description: "Built and deployed scalable batch pipelines using dbt, Apache Spark, Apache Airflow, and Apache Hive to process over 2B records daily, supporting high-throughput ML feature engineering workflows. Collaborated with research scientists to productionize LLM features, improving model recall by 9% and reducing query latency by 35%. Developed interactive dashboards using Tableau and advanced SQL, decreasing manual query time by 70% for 50+ internal users. Built and launched an AI-powered onboarding assistant, reducing onboarding time by 60% across 7+ teams.",
+      description: [
+        "Built and deployed scalable batch pipelines using dbt, Apache Spark, Apache Airflow, and Apache Hive to process over 2B records daily",
+        "Collaborated with research scientists to productionize LLM features, improving model recall by 9% and reducing query latency by 35%", 
+        "Developed interactive dashboards using Tableau and advanced SQL, decreasing manual query time by 70% for 50+ internal users",
+        "Built and launched an AI-powered onboarding assistant, reducing onboarding time by 60% across 7+ teams"
+      ],
       tags: ["LLM Features", "ML Engineering", "Data Pipelines"],
       icon: "fab fa-meta",
       metrics: [
@@ -36,7 +41,12 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
     {
       company: "Volga Partners",
       role: "Software Engineer",
-      description: "Engineered an AI SaaS product, Amethyst, utilizing LangChain and OpenAI LLMs, efficiently processing up to 10,000+ user queries daily. Collaborated with a cross-functional team following Agile methodologies (Scrum) to deliver modular data import and Q&A features. Solved performance bottlenecks by implementing caching mechanisms and optimizing database queries, leading to a 25% reduction in UI load times. Automated performance monitoring and error logging, improving system reliability and reducing downtime by 30%.",
+      description: [
+        "Engineered an AI SaaS product, Amethyst, utilizing LangChain and OpenAI LLMs, efficiently processing up to 10,000+ user queries daily",
+        "Collaborated with a cross-functional team following Agile methodologies (Scrum) to deliver modular data import and Q&A features",
+        "Solved performance bottlenecks by implementing caching mechanisms and optimizing database queries, leading to a 25% reduction in UI load times",
+        "Automated performance monitoring and error logging, improving system reliability and reducing downtime by 30%"
+      ],
       tags: ["AI SaaS", "Performance Optimization", "Agile Development"],
       icon: "fas fa-rocket",
       metrics: [
@@ -51,7 +61,12 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
     {
       company: "Meta",
       role: "Data Engineer Intern",
-      description: "Built and deployed scalable batch pipelines using dbt, Apache Spark, Apache Airflow, and Apache Hive to process TBs of records daily, supporting high-throughput ML model training workflows. Collaborated with research scientists to productionize LLM features, improving model recall by 9% and reducing query latency by 35% using optimized Presto and Spark transformations. Developed interactive dashboards using Tableau and advanced SQL to expose model outputs and metrics, decreasing manual query time by 70% for 50+ internal users. Built and launched an AI-powered onboarding assistant for an internal platform, reducing onboarding time by 60% across 7+ teams.",
+      description: [
+        "Built and deployed scalable batch pipelines using dbt, Apache Spark, Apache Airflow, and Apache Hive to process TBs of records daily",
+        "Collaborated with research scientists to productionize LLM features, improving model recall by 9% and reducing query latency by 35%",
+        "Developed interactive dashboards using Tableau and advanced SQL to expose model outputs and metrics, decreasing manual query time by 70%", 
+        "Built and launched an AI-powered onboarding assistant for an internal platform, reducing onboarding time by 60% across 7+ teams"
+      ],
       tags: ["Big Data", "ML Pipelines", "Research Collaboration"],
       icon: "fab fa-meta",
       metrics: [
@@ -64,7 +79,12 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
     {
       company: "Infolyze Solutions",
       role: "Data Engineer",
-      description: "Engineered scalable data infrastructures for 6 client projects using Python, Google Cloud, and AWS, processing over 10 GB of data daily. Optimized ETL processes with Apache Airflow, reducing data integration time by 30%. Implemented advanced data processing systems using Apache Spark on Databricks, enhancing data retrieval speeds by 20% and reducing latency for real-time analytics. Automated data validation on BigQuery with Python-driven checks, reducing manual validation by 50% and increasing client satisfaction by 40%.",
+      description: [
+        "Engineered scalable data infrastructures for 6 client projects using Python, Google Cloud, and AWS, processing over 10 GB of data daily",
+        "Optimized ETL processes with Apache Airflow, reducing data integration time by 30%", 
+        "Implemented advanced data processing systems using Apache Spark on Databricks, enhancing data retrieval speeds by 20%",
+        "Automated data validation on BigQuery with Python-driven checks, reducing manual validation by 50% and increasing client satisfaction by 40%"
+      ],
       tags: ["ETL Optimization", "Cloud Infrastructure", "Client Solutions"],
       icon: "fas fa-chart-line",
       metrics: [
@@ -74,9 +94,45 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
         { value: 40, label: "Client Satisfaction Increase", suffix: "%" },
       ],
     },
+    {
+      company: "AI Community of Pakistan",
+      role: "President Academics",
+      description: [
+        "Led 30+ volunteers across multiple academic teams",
+        "Organized 5 seminars with prominent AI industry leaders", 
+        "Conducted 3 coding competitions on HackerRank attracting 250+ nationwide participants"
+      ],
+      tags: ["Leadership", "Community", "AI Education"],
+      icon: "fas fa-users",
+      metrics: [
+        { value: 30, label: "Team Members Led", suffix: "+" },
+        { value: 5, label: "AI Seminars Organized", suffix: "" },
+        { value: 250, label: "Competition Participants", suffix: "+" },
+      ],
+    },
   ];
 
-  const experiences = persona === 'software' ? softwareExperience : dataExperience;
+  const dataExperienceWithAI = [
+    ...dataExperience,
+    {
+      company: "AI Community of Pakistan",
+      role: "President Academics",
+      description: [
+        "Led 30+ volunteers across multiple academic teams",
+        "Organized 5 seminars with prominent AI industry leaders", 
+        "Conducted 3 coding competitions on HackerRank attracting 250+ nationwide participants"
+      ],
+      tags: ["Leadership", "Community", "AI Education"],
+      icon: "fas fa-users",
+      metrics: [
+        { value: 30, label: "Team Members Led", suffix: "+" },
+        { value: 5, label: "AI Seminars Organized", suffix: "" },
+        { value: 250, label: "Competition Participants", suffix: "+" },
+      ],
+    },
+  ];
+
+  const experiences = persona === 'software' ? softwareExperience : dataExperienceWithAI;
   const gradient = persona === 'software' ? "from-blue-400 to-violet-400" : "from-violet-400 to-cyan-400";
 
   return (
@@ -136,14 +192,25 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
                     {exp.role}
                   </motion.p>
                   
-                  <motion.p
+                  <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
-                    className="text-slate-300 mb-4"
+                    className="mb-4"
                   >
-                    {exp.description}
-                  </motion.p>
+                    {exp.description.map((bullet, bulletIndex) => (
+                      <motion.div
+                        key={bulletIndex}
+                        initial={{ x: -10, opacity: 0 }}
+                        animate={isVisible ? { x: 0, opacity: 1 } : { x: -10, opacity: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.2 + 0.4 + bulletIndex * 0.1 }}
+                        className="flex items-start mb-2 text-sm"
+                      >
+                        <span className="terminal-bullet mr-3 mt-1 text-xs">▶</span>
+                        <span className="text-slate-300 leading-relaxed">{bullet}</span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
                   
                   {exp.metrics && (
                     <motion.div

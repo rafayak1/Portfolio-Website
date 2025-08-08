@@ -74,7 +74,8 @@ export default function Home() {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-6xl md:text-8xl font-bold mb-4 gradient-text"
+                className="text-6xl md:text-8xl font-bold mb-4 text-green-400"
+                style={{ textShadow: '0 0 30px rgb(34 197 94)' }}
               >
                 Abdul Rafay Ahmed Khan
               </motion.h1>
@@ -120,7 +121,11 @@ export default function Home() {
         animate={{ scale: 1 }}
         transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
         onClick={() => setIsContactOpen(true)}
-        className="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse-glow z-40"
+        className="fixed bottom-8 right-8 w-16 h-16 bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-40"
+        style={{ 
+          boxShadow: '0 0 20px rgba(34, 197, 94, 0.5)',
+          filter: 'drop-shadow(0 0 10px rgb(34 197 94))'
+        }}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.95 }}
       >

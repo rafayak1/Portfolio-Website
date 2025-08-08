@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import databuffImage from "@assets/80fadb14dafb36ce23513171477d2437bf2defc43f3205a8661e9546547bc5f2_1754629809767.png";
 
 interface ProjectsGalleryProps {
   persona: 'software' | 'data';
@@ -25,7 +26,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
     {
       title: "DataBuff",
       description: "An AI-powered, interactive data preprocessing and visualization web app built using Flask, React, Google Cloud, and OpenRouter AI. Features include authentication (email + Google OAuth), dataset uploading, a chat-based AI assistant (\"BuffBot\") that translates natural-language into editable pandas code, live previews, AI-generated visualizations with captions, and secure cloud storage with Firestore and GCS.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      image: databuffImage,
       tags: ["Flask", "React", "AI", "Google Cloud"],
       hover: "🤖 AI-powered data magic...",
       github: "https://github.com/rafayak1/bda-project",
@@ -44,7 +45,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
     {
       title: "DataBuff",
       description: "An AI-powered, interactive data preprocessing and visualization web app built using Flask, React, Google Cloud, and OpenRouter AI. Features include authentication (email + Google OAuth), dataset uploading, a chat-based AI assistant (\"BuffBot\") that translates natural-language into editable pandas code, live previews, AI-generated visualizations with captions, and secure cloud storage with Firestore and GCS.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      image: databuffImage,
       tags: ["Flask", "AI", "Data Science"],
       hover: "🤖 AI-powered data magic...",
       github: "https://github.com/rafayak1/bda-project",
