@@ -94,46 +94,10 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
         { value: 40, label: "Client Satisfaction Increase", suffix: "%" },
       ],
     },
-    {
-      company: "AI Community of Pakistan",
-      role: "President Academics",
-      description: [
-        "Led 30+ volunteers across multiple academic teams",
-        "Organized 5 seminars with prominent AI industry leaders", 
-        "Conducted 3 coding competitions on HackerRank attracting 250+ nationwide participants"
-      ],
-      tags: ["Leadership", "Community", "AI Education"],
-      icon: "fas fa-users",
-      metrics: [
-        { value: 30, label: "Team Members Led", suffix: "+" },
-        { value: 5, label: "AI Seminars Organized", suffix: "" },
-        { value: 250, label: "Competition Participants", suffix: "+" },
-      ],
-    },
   ];
 
-  const dataExperienceWithAI = [
-    ...dataExperience,
-    {
-      company: "AI Community of Pakistan",
-      role: "President Academics",
-      description: [
-        "Led 30+ volunteers across multiple academic teams",
-        "Organized 5 seminars with prominent AI industry leaders", 
-        "Conducted 3 coding competitions on HackerRank attracting 250+ nationwide participants"
-      ],
-      tags: ["Leadership", "Community", "AI Education"],
-      icon: "fas fa-users",
-      metrics: [
-        { value: 30, label: "Team Members Led", suffix: "+" },
-        { value: 5, label: "AI Seminars Organized", suffix: "" },
-        { value: 250, label: "Competition Participants", suffix: "+" },
-      ],
-    },
-  ];
-
-  const experiences = persona === 'software' ? softwareExperience : dataExperienceWithAI;
-  const gradient = persona === 'software' ? "from-blue-400 to-violet-400" : "from-violet-400 to-cyan-400";
+  const experiences = persona === 'software' ? softwareExperience : dataExperience;
+  const gradient = "from-green-400 to-green-600";
 
   return (
     <section

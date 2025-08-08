@@ -3,6 +3,7 @@ import { AboutSection } from "./about-section";
 import { TechStack } from "./tech-stack";
 import { ExperienceTimeline } from "./experience-timeline";
 import { ProjectsGallery } from "./projects-gallery";
+import { CommunityExperience } from "./community-experience";
 
 interface PersonaSectionProps {
   persona: 'software' | 'data';
@@ -22,6 +23,7 @@ export function PersonaSection({ persona, isMobile }: PersonaSectionProps) {
       <TechStack persona={persona} isMobile={isMobile} />
       <ExperienceTimeline persona={persona} isMobile={isMobile} />
       <ProjectsGallery persona={persona} isMobile={isMobile} />
+      <CommunityExperience persona={persona} isMobile={isMobile} />
     </motion.div>
   );
 }
