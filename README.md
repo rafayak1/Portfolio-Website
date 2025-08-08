@@ -1,12 +1,8 @@
-# Replit.md - Abdul Rafay Ahmed Khan Portfolio
+# Abdul Rafay Ahmed Khan Portfolio
 
 ## Overview
 
 This is a single-page portfolio application for Abdul Rafay Ahmed Khan that showcases a dual-persona concept - Software Engineer and Data Engineer. The application features a 3D gateway with animated avatars that transition into detailed persona sections with smooth animations, parallax effects, and interactive elements. Built with React, TypeScript, and modern web technologies, it creates an immersive "wow" experience for visitors.
-
-## User Preferences
-
-Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
@@ -23,17 +19,6 @@ Preferred communication style: Simple, everyday language.
 - **Development**: Vite middleware integration for hot module replacement in development
 - **Build Process**: ESBuild for production server bundling
 - **Storage Interface**: Abstracted storage layer with in-memory implementation for user management
-
-### Data Storage Solutions
-- **Database**: PostgreSQL configured with Drizzle ORM
-- **Schema Management**: Drizzle Kit for migrations and schema management
-- **Connection**: Neon Database serverless PostgreSQL connection
-- **Session Storage**: PostgreSQL session store with connect-pg-simple
-
-### Authentication and Authorization
-- **User Schema**: Basic user model with username/password fields
-- **Session Management**: Express sessions with PostgreSQL storage
-- **Validation**: Zod schemas with Drizzle integration for type-safe validation
 
 ### Component Architecture
 - **Portfolio Components**: Modular persona sections (About, Tech Stack, Experience, Projects)
