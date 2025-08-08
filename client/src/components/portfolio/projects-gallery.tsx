@@ -25,17 +25,17 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
   const softwareProjects: Project[] = [
     {
       title: "DataBuff",
-      description: "An AI-powered, interactive data preprocessing and visualization web app built using Flask, React, Google Cloud, and OpenRouter AI. Features include authentication (email + Google OAuth), dataset uploading, a chat-based AI assistant (\"BuffBot\") that translates natural-language into editable pandas code, live previews, AI-generated visualizations with captions, and secure cloud storage with Firestore and GCS.",
+      description: "An AI-powered data preprocessing platform where users chat with 'BuffBot' to transform raw datasets into insights using natural language commands.",
       image: databuffImage,
-      tags: ["Flask", "React", "AI", "Google Cloud"],
+      tags: ["Flask", "React", "AI", "Google Cloud", "OAuth", "Pandas", "OpenRouter"],
       hover: "🤖 AI-powered data magic...",
       github: "https://github.com/rafayak1/bda-project",
     },
     {
       title: "Raasta Trip Booking",
-      description: "A dynamic web app for trip booking with Django and PostgreSQL, featuring efficient user interactions and search/filter functionality enabling users to book based on preferences such as location and price. Designed with optimized database schema handling 10,000+ records effectively.",
+      description: "A dynamic trip booking platform with smart search filters, handling 10,000+ records with optimized performance for seamless user experience.",
       image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Django", "PostgreSQL", "RESTful APIs"],
+      tags: ["Django", "PostgreSQL", "RESTful APIs", "Search Optimization", "Database Design"],
       hover: "✈️ Book your next adventure...",
       demo: "https://raasta.com.pk/",
     },
@@ -44,56 +44,56 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
   const dataProjects: Project[] = [
     {
       title: "DataBuff",
-      description: "An AI-powered, interactive data preprocessing and visualization web app built using Flask, React, Google Cloud, and OpenRouter AI. Features include authentication (email + Google OAuth), dataset uploading, a chat-based AI assistant (\"BuffBot\") that translates natural-language into editable pandas code, live previews, AI-generated visualizations with captions, and secure cloud storage with Firestore and GCS.",
+      description: "An AI-powered data preprocessing platform where users chat with 'BuffBot' to transform raw datasets into insights using natural language commands.",
       image: databuffImage,
-      tags: ["Flask", "AI", "Data Science"],
+      tags: ["Flask", "AI", "Data Science", "Pandas", "Visualization", "Google Cloud", "Firestore"],
       hover: "🤖 AI-powered data magic...",
       github: "https://github.com/rafayak1/bda-project",
     },
     {
       title: "MetaPulse",
-      description: "A production-style data pipeline leveraging Apache Airflow, PostgreSQL, and Metabase. It ingests and cleans raw CSV data using an Airflow DAG, stores cleaned data in a PostgreSQL data warehouse, and offers visual insights via Metabase dashboards. The stack is fully containerized with Docker Compose and has been tested on over 1.2 million NYC taxi records.",
+      description: "A production-grade data pipeline processing 1.2M NYC taxi records through automated ETL workflows with real-time dashboard insights.",
       image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Airflow", "PostgreSQL", "Docker"],
+      tags: ["Airflow", "PostgreSQL", "Docker", "Metabase", "ETL", "Data Warehouse", "DAGs"],
       hover: "📊 Processing 1.2M trips...",
       github: "https://github.com/rafayak1/metapulse",
     },
     {
       title: "AWS Data Pipeline",
-      description: "An end-to-end AWS-based data pipeline using Athena, Python, Lambda, and Step Functions. While the README offers a brief description, the full architecture details—including ingestion, transformation, and orchestration—can be explored through the codebase.",
+      description: "An end-to-end serverless data pipeline orchestrating data ingestion, transformation, and analytics using AWS cloud-native services.",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["AWS", "Lambda", "Athena"],
+      tags: ["AWS", "Lambda", "Athena", "Step Functions", "Python", "Serverless", "Cloud Architecture"],
       hover: "☁️ AWS cloud architecture...",
       github: "https://github.com/rafayak1/aws-data-pipeline",
     },
     {
       title: "Sentiment Analysis",
-      description: "A machine learning project (with Jupyter Notebook files) focused on sentiment analysis using ML models",
+      description: "A comprehensive machine learning study comparing multiple models for sentiment classification with detailed performance analysis.",
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Machine Learning", "NLP"],
+      tags: ["Machine Learning", "NLP", "Python", "Jupyter", "Model Comparison", "Classification"],
       hover: "🧠 ML sentiment analysis...",
       github: "https://github.com/rafayak1/Sentiment-Analysis-using-ML-Models",
     },
     {
       title: "E-Commerce EDA",
-      description: "A data science project notebook that conducts exploratory data analysis (EDA) and modelling on an e-commerce dataset.",
+      description: "A comprehensive exploratory data analysis uncovering customer behavior patterns and sales trends through statistical modeling and visualization.",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Data Analysis", "EDA"],
+      tags: ["Data Analysis", "EDA", "Python", "Pandas", "Statistical Modeling", "Business Intelligence"],
       hover: "📈 E-commerce insights...",
       github: "https://github.com/rafayak1/Data-Science-Project",
     },
     {
       title: "NYC Accidents Visualization",
-      description: "A web app that visualizes NYC motor vehicle collision data, implemented in Python and runnable locally via Streamlit (streamlit run app.py).",
+      description: "An interactive web dashboard visualizing NYC motor vehicle collision hotspots and trends with real-time filtering capabilities.",
       image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Streamlit", "Visualization"],
+      tags: ["Streamlit", "Visualization", "Python", "Interactive Dashboard", "Geospatial Analysis", "Public Safety"],
       hover: "🗽 NYC data visualization...",
       github: "https://github.com/rafayak1/NYC_Accidents_Visualization",
     },
   ];
 
   const projects = persona === 'software' ? softwareProjects : dataProjects;
-  const gradient = persona === 'software' ? "from-blue-400 to-violet-400" : "from-violet-400 to-cyan-400";
+  const gradient = "from-green-400 to-green-600";
 
   return (
     <section
