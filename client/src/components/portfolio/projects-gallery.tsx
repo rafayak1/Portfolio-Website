@@ -13,6 +13,8 @@ interface Project {
   image: string;
   tags: string[];
   hover?: string;
+  github?: string;
+  demo?: string;
 }
 
 export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
@@ -22,34 +24,70 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
   const softwareProjects: Project[] = [
     {
       title: "DataBuff",
-      description: "Full-stack web app that auto-generates Pandas code for data cleaning with 85%+ test coverage.",
+      description: "An AI-powered, interactive data preprocessing and visualization web app built using Flask, React, Google Cloud, and OpenRouter AI. Features include authentication (email + Google OAuth), dataset uploading, a chat-based AI assistant (\"BuffBot\") that translates natural-language into editable pandas code, live previews, AI-generated visualizations with captions, and secure cloud storage with Firestore and GCS.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Python", "React"],
-      hover: "🔄 Auto-generating cleaning code...",
+      tags: ["Flask", "React", "AI", "Google Cloud"],
+      hover: "🤖 AI-powered data magic...",
+      github: "https://github.com/rafayak1/bda-project",
     },
     {
       title: "Raasta Trip Booking",
-      description: "Travel booking platform with advanced search filters and well-designed PostgreSQL schema.",
+      description: "A dynamic web app for trip booking with Django and PostgreSQL, featuring efficient user interactions and search/filter functionality enabling users to book based on preferences such as location and price. Designed with optimized database schema handling 10,000+ records effectively.",
       image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Django", "PostgreSQL"],
-      hover: "✈️ Booking your next adventure...",
+      tags: ["Django", "PostgreSQL", "RESTful APIs"],
+      hover: "✈️ Book your next adventure...",
+      demo: "https://raasta.com.pk/",
     },
   ];
 
   const dataProjects: Project[] = [
     {
-      title: "MetaPulse",
-      description: "NYC-Taxi data pipeline and dashboarding system handling 1.2 million trips with real-time analytics.",
-      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Spark", "Real-time"],
-      hover: "📊 Processing 1.2M trips...",
+      title: "DataBuff",
+      description: "An AI-powered, interactive data preprocessing and visualization web app built using Flask, React, Google Cloud, and OpenRouter AI. Features include authentication (email + Google OAuth), dataset uploading, a chat-based AI assistant (\"BuffBot\") that translates natural-language into editable pandas code, live previews, AI-generated visualizations with captions, and secure cloud storage with Firestore and GCS.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      tags: ["Flask", "AI", "Data Science"],
+      hover: "🤖 AI-powered data magic...",
+      github: "https://github.com/rafayak1/bda-project",
     },
     {
-      title: "DataBuff Analytics",
-      description: "Zero-code data science enabler for analysts with automated pipeline generation and visualization.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      tags: ["Zero-Code", "Analytics"],
-      hover: "🚀 No-code magic in action...",
+      title: "MetaPulse",
+      description: "A production-style data pipeline leveraging Apache Airflow, PostgreSQL, and Metabase. It ingests and cleans raw CSV data using an Airflow DAG, stores cleaned data in a PostgreSQL data warehouse, and offers visual insights via Metabase dashboards. The stack is fully containerized with Docker Compose and has been tested on over 1.2 million NYC taxi records.",
+      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      tags: ["Airflow", "PostgreSQL", "Docker"],
+      hover: "📊 Processing 1.2M trips...",
+      github: "https://github.com/rafayak1/metapulse",
+    },
+    {
+      title: "AWS Data Pipeline",
+      description: "An end-to-end AWS-based data pipeline using Athena, Python, Lambda, and Step Functions. While the README offers a brief description, the full architecture details—including ingestion, transformation, and orchestration—can be explored through the codebase.",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      tags: ["AWS", "Lambda", "Athena"],
+      hover: "☁️ AWS cloud architecture...",
+      github: "https://github.com/rafayak1/aws-data-pipeline",
+    },
+    {
+      title: "Sentiment Analysis",
+      description: "A machine learning project (with Jupyter Notebook files) focused on sentiment analysis using ML models",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      tags: ["Machine Learning", "NLP"],
+      hover: "🧠 ML sentiment analysis...",
+      github: "https://github.com/rafayak1/Sentiment-Analysis-using-ML-Models",
+    },
+    {
+      title: "E-Commerce EDA",
+      description: "A data science project notebook that conducts exploratory data analysis (EDA) and modelling on an e-commerce dataset.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      tags: ["Data Analysis", "EDA"],
+      hover: "📈 E-commerce insights...",
+      github: "https://github.com/rafayak1/Data-Science-Project",
+    },
+    {
+      title: "NYC Accidents Visualization",
+      description: "A web app that visualizes NYC motor vehicle collision data, implemented in Python and runnable locally via Streamlit (streamlit run app.py).",
+      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      tags: ["Streamlit", "Visualization"],
+      hover: "🗽 NYC data visualization...",
+      github: "https://github.com/rafayak1/NYC_Accidents_Visualization",
     },
   ];
 
@@ -71,29 +109,29 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
           Featured Projects
         </motion.h2>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ y: 50, opacity: 0, scale: 0.9 }}
               animate={isVisible ? { y: 0, opacity: 1, scale: 1 } : { y: 50, opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               className="project-card group cursor-pointer"
               onMouseEnter={() => setHoveredProject(project.title)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               <motion.div
-                whileHover={{ scale: 1.05, y: -10 }}
+                whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.3 }}
                 className={`glass-card rounded-2xl overflow-hidden hover:glow-${persona === 'software' ? 'blue' : 'violet'} transition-all duration-300`}
               >
                 <div className="relative overflow-hidden">
                   <motion.img
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.6 }}
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-40 object-cover"
                   />
                   
                   {/* Hover Overlay */}
@@ -116,26 +154,26 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
                   </motion.div>
                 </div>
                 
-                <div className="p-6">
+                <div className="p-4">
                   <motion.h3
-                    className="text-xl font-semibold text-slate-50 mb-2"
+                    className="text-lg font-semibold text-slate-50 mb-2"
                     layoutId={`title-${project.title}`}
                   >
                     {project.title}
                   </motion.h3>
                   
                   <motion.p
-                    className="text-slate-300 mb-4"
+                    className="text-slate-300 mb-4 text-sm line-clamp-3"
                     layoutId={`description-${project.title}`}
                   >
                     {project.description}
                   </motion.p>
                   
                   <motion.div
-                    className="flex gap-2"
+                    className="flex flex-wrap gap-2 mb-4"
                     layoutId={`tags-${project.title}`}
                   >
-                    {project.tags.map((tag, tagIndex) => (
+                    {project.tags.slice(0, 3).map((tag, tagIndex) => (
                       <motion.span
                         key={tagIndex}
                         whileHover={{ scale: 1.05 }}
@@ -143,11 +181,51 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
                           persona === 'software' 
                             ? tagIndex === 0 ? 'bg-blue-500/20 text-blue-400' : 'bg-violet-500/20 text-violet-400'
                             : tagIndex === 0 ? 'bg-violet-500/20 text-violet-400' : 'bg-cyan-500/20 text-cyan-400'
-                        } px-3 py-1 rounded-full text-sm`}
+                        } px-2 py-1 rounded-full text-xs`}
                       >
                         {tag}
                       </motion.span>
                     ))}
+                    {project.tags.length > 3 && (
+                      <span className="text-slate-400 text-xs px-2 py-1">
+                        +{project.tags.length - 3} more
+                      </span>
+                    )}
+                  </motion.div>
+                  
+                  {/* Action Buttons */}
+                  <motion.div
+                    className="flex gap-2"
+                    initial={{ y: 10, opacity: 0 }}
+                    animate={isVisible ? { y: 0, opacity: 1 } : { y: 10, opacity: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
+                  >
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                      >
+                        <i className="fab fa-github" />
+                        GitHub
+                      </motion.a>
+                    )}
+                    {project.demo && (
+                      <motion.a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`flex-1 bg-gradient-to-r ${persona === 'software' ? 'from-blue-500 to-violet-500' : 'from-violet-500 to-cyan-500'} hover:from-blue-600 hover:to-violet-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2`}
+                      >
+                        <i className="fas fa-external-link-alt" />
+                        Live Demo
+                      </motion.a>
+                    )}
                   </motion.div>
                 </div>
               </motion.div>

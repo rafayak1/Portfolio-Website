@@ -22,23 +22,27 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
   const softwareExperience: Experience[] = [
     {
       company: "Meta",
-      role: "Software Engineer Intern",
-      description: "Collaborated with researchers to launch new LLM features while reducing query latency by approximately 35%.",
-      tags: ["LLM Optimization", "Research Collaboration"],
+      role: "Data Engineer Intern",
+      description: "Built and deployed scalable batch pipelines using dbt, Apache Spark, Apache Airflow, and Apache Hive to process over 2B records daily, supporting high-throughput ML feature engineering workflows. Collaborated with research scientists to productionize LLM features, improving model recall by 9% and reducing query latency by 35%. Developed interactive dashboards using Tableau and advanced SQL, decreasing manual query time by 70% for 50+ internal users. Built and launched an AI-powered onboarding assistant, reducing onboarding time by 60% across 7+ teams.",
+      tags: ["LLM Features", "ML Engineering", "Data Pipelines"],
       icon: "fab fa-meta",
       metrics: [
+        { value: 9, label: "Model Recall Improvement", suffix: "%" },
         { value: 35, label: "Query Latency Reduction", suffix: "%" },
+        { value: 70, label: "Manual Query Time Reduction", suffix: "%" },
+        { value: 60, label: "Onboarding Time Reduction", suffix: "%" },
       ],
     },
     {
       company: "Volga Partners",
       role: "Software Engineer",
-      description: "Engineered an AI SaaS that handles 10,000+ user queries daily and cut UI load time by approximately 25%.",
-      tags: ["AI SaaS", "Performance Optimization"],
+      description: "Engineered an AI SaaS product, Amethyst, utilizing LangChain and OpenAI LLMs, efficiently processing up to 10,000+ user queries daily. Collaborated with a cross-functional team following Agile methodologies (Scrum) to deliver modular data import and Q&A features. Solved performance bottlenecks by implementing caching mechanisms and optimizing database queries, leading to a 25% reduction in UI load times. Automated performance monitoring and error logging, improving system reliability and reducing downtime by 30%.",
+      tags: ["AI SaaS", "Performance Optimization", "Agile Development"],
       icon: "fas fa-rocket",
       metrics: [
         { value: 10000, label: "Daily Queries", suffix: "+" },
         { value: 25, label: "UI Load Time Reduction", suffix: "%" },
+        { value: 30, label: "Downtime Reduction", suffix: "%" },
       ],
     },
   ];
@@ -47,23 +51,27 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
     {
       company: "Meta",
       role: "Data Engineer Intern",
-      description: "Built batch pipelines processing terabytes daily, improved LLM recall by 9% while cutting query latency by 35%.",
-      tags: ["Big Data", "Pipeline Engineering"],
+      description: "Built and deployed scalable batch pipelines using dbt, Apache Spark, Apache Airflow, and Apache Hive to process TBs of records daily, supporting high-throughput ML model training workflows. Collaborated with research scientists to productionize LLM features, improving model recall by 9% and reducing query latency by 35% using optimized Presto and Spark transformations. Developed interactive dashboards using Tableau and advanced SQL to expose model outputs and metrics, decreasing manual query time by 70% for 50+ internal users. Built and launched an AI-powered onboarding assistant for an internal platform, reducing onboarding time by 60% across 7+ teams.",
+      tags: ["Big Data", "ML Pipelines", "Research Collaboration"],
       icon: "fab fa-meta",
       metrics: [
         { value: 9, label: "LLM Recall Improvement", suffix: "%" },
         { value: 35, label: "Query Latency Reduction", suffix: "%" },
+        { value: 70, label: "Manual Query Time Reduction", suffix: "%" },
+        { value: 60, label: "Onboarding Time Reduction", suffix: "%" },
       ],
     },
     {
       company: "Infolyze Solutions",
       role: "Data Engineer",
-      description: "Optimized ETL for six client projects, trimming integration time by 30% and boosting retrieval speed by 20%.",
-      tags: ["ETL Optimization", "Client Solutions"],
+      description: "Engineered scalable data infrastructures for 6 client projects using Python, Google Cloud, and AWS, processing over 10 GB of data daily. Optimized ETL processes with Apache Airflow, reducing data integration time by 30%. Implemented advanced data processing systems using Apache Spark on Databricks, enhancing data retrieval speeds by 20% and reducing latency for real-time analytics. Automated data validation on BigQuery with Python-driven checks, reducing manual validation by 50% and increasing client satisfaction by 40%.",
+      tags: ["ETL Optimization", "Cloud Infrastructure", "Client Solutions"],
       icon: "fas fa-chart-line",
       metrics: [
         { value: 30, label: "Integration Time Reduction", suffix: "%" },
         { value: 20, label: "Retrieval Speed Boost", suffix: "%" },
+        { value: 50, label: "Manual Validation Reduction", suffix: "%" },
+        { value: 40, label: "Client Satisfaction Increase", suffix: "%" },
       ],
     },
   ];
@@ -142,11 +150,11 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
                       initial={{ y: 20, opacity: 0 }}
                       animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.2 + 0.5 }}
-                      className="flex gap-6 mb-4"
+                      className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4"
                     >
                       {exp.metrics.map((metric, metricIndex) => (
                         <div key={metricIndex} className="text-center">
-                          <div className="text-2xl font-bold text-slate-50">
+                          <div className="text-xl md:text-2xl font-bold text-slate-50">
                             <AnimatedCounter
                               value={metric.value}
                               suffix={metric.suffix}

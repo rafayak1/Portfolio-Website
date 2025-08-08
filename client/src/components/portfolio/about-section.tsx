@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import profileImage from "@assets/Screenshot 2022-06-29 at 3.33.40 AM_1754628874300.png";
 
 interface AboutSectionProps {
   persona: 'software' | 'data';
@@ -14,9 +15,10 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
     description: "Master's student in Computer Science at CU-Boulder who loves crafting AI-powered products that feel magical and fast. I believe in building software that doesn't just work—it delights.",
     badges: [
       { icon: "🎓", text: "CU-Boulder", color: "blue" },
+      { icon: "⭐", text: "4.0 CGPA", color: "yellow" },
       { icon: "🤖", text: "AI Enthusiast", color: "violet" },
     ],
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    image: profileImage,
     gradient: "from-blue-400 to-violet-400",
   };
 
@@ -24,10 +26,11 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
     title: "About Me",
     description: "Master's student in Computer Science at CU-Boulder, focused on turning massive datasets into realtime insights and building reliable pipelines that scale.",
     badges: [
-      { icon: "📊", text: "Data Science", color: "violet" },
-      { icon: "⚡", text: "Real-time", color: "cyan" },
+      { icon: "🎓", text: "CU-Boulder", color: "violet" },
+      { icon: "⭐", text: "4.0 CGPA", color: "yellow" },
+      { icon: "📊", text: "Data Science", color: "cyan" },
     ],
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    image: profileImage,
     gradient: "from-violet-400 to-cyan-400",
   };
 
@@ -67,15 +70,18 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
             initial={{ y: 30, opacity: 0 }}
             animate={isVisible ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex gap-4"
+            className="flex flex-wrap gap-4"
           >
             {content.badges.map((badge, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05 }}
-                className={`bg-${badge.color}-500/20 px-4 py-2 rounded-full border border-${badge.color}-500/30`}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={isVisible ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className={`bg-${badge.color === 'yellow' ? 'yellow' : badge.color}-500/20 px-4 py-2 rounded-full border border-${badge.color === 'yellow' ? 'yellow' : badge.color}-500/30 ${badge.text === '4.0 CGPA' ? 'animate-pulse-glow' : ''}`}
               >
-                <span className={`text-${badge.color}-400`}>
+                <span className={`text-${badge.color === 'yellow' ? 'yellow' : badge.color}-400 ${badge.text === '4.0 CGPA' ? 'font-bold' : ''}`}>
                   {badge.icon} {badge.text}
                 </span>
               </motion.div>
