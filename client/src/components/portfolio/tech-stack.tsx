@@ -120,14 +120,14 @@ export function TechStack({ persona, isMobile }: TechStackProps) {
                 <span className="mr-3">▶</span>{category}
               </motion.h3>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="flex flex-wrap justify-center gap-6">
                 {technologies.map((tech: TechItem, techIndex: number) => (
                   <motion.div
                     key={tech.name}
                     initial={{ y: 30, opacity: 0, scale: 0.9 }}
                     animate={isVisible ? { y: 0, opacity: 1, scale: 1 } : { y: 30, opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.6, delay: tech.delay }}
-                    className="tech-item group cursor-pointer"
+        className="tech-item group cursor-pointer w-36 sm:w-40"
                     onMouseEnter={() => handleTechHover(tech.name)}
                     onMouseLeave={() => setHoveredTech(null)}
                   >
