@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
+import { SiteFooter } from "@/components/portfolio/site-footer";
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+  <SiteFooter />
       </TooltipProvider>
     </QueryClientProvider>
   );
