@@ -69,12 +69,12 @@ export default function Home() {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="min-h-screen flex items-center justify-center relative overflow-hidden"
           >
-            <div className="text-center z-10 max-w-6xl mx-auto px-6">
+            <div className="text-center z-10 w-full px-6">
               <motion.h1
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-6xl md:text-8xl font-bold mb-4 text-green-400"
+                className="text-6xl md:text-8xl font-bold mb-4 text-green-400 whitespace-nowrap"
                 style={{ textShadow: '0 0 30px rgb(34 197 94)' }}
               >
                 Abdul Rafay Ahmed Khan
