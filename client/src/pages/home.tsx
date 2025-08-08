@@ -86,7 +86,7 @@ export default function Home() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-slate-300 mb-16"
               >
-                Choose Your Journey
+                Choose A Role
               </motion.p>
 
               <AvatarStage 
