@@ -80,7 +80,7 @@ export function AvatarStage({ onPersonaSelect, isMobile }: AvatarStageProps) {
               }}
               transition={{ duration: 0.6, repeat: hoveredAvatar === 'software' ? Infinity : 0 }}
             />
-            <h3 className="text-xl font-semibold text-slate-50">Software Engineer</h3>
+            <h3 className="text-xl font-semibold text-slate-50">Software</h3>
             <p className="text-sm text-slate-300 mt-2">AI-Powered Products</p>
           </div>
         </motion.div>
@@ -147,7 +147,7 @@ export function AvatarStage({ onPersonaSelect, isMobile }: AvatarStageProps) {
               }}
               transition={{ duration: 0.6, repeat: hoveredAvatar === 'data' ? Infinity : 0 }}
             />
-            <h3 className="text-xl font-semibold text-slate-50">Data Engineer</h3>
+            <h3 className="text-xl font-semibold text-slate-50">Data</h3>
             <p className="text-sm text-slate-300 mt-2">Realtime Insights</p>
           </div>
         </motion.div>
