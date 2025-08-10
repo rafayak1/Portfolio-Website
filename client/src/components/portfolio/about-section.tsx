@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import profileImage from "@assets/Screenshot 2022-06-29 at 3.33.40 AM_1754628874300.png";
 import dataResumeUrl from "@assets/Data_Resume.pdf";
@@ -11,6 +12,7 @@ interface AboutSectionProps {
 
 export function AboutSection({ persona, isMobile }: AboutSectionProps) {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   const softwareContent = {
     title: "About Me",
@@ -91,55 +93,36 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
             ))}
           </motion.div>
           
-          {/* Download Resume Button */}
+          {/* Resume Actions */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={isVisible ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="pt-4"
+            className="pt-4 flex flex-wrap gap-4"
           >
+            {/* View Resume (opens modal) */}
+            <motion.button
+              onClick={() => setIsResumeOpen(true)}
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 px-6 py-4 glass-card hover:bg-slate-700/40 text-slate-100 font-semibold text-lg rounded-xl transition-all duration-300 border border-slate-700 shadow-lg"
+            >
+              <i className="fas fa-eye text-green-400" />
+              <span>View {persona === 'software' ? 'Software' : 'Data'} Resume</span>
+            </motion.button>
+
+            {/* Download Resume */}
             <motion.a
               href={persona === 'software' ? softwareResumeUrl : dataResumeUrl}
               download={persona === 'software' ? "Rafay_SWE_Resume.pdf" : "Rafay_Data_Resume.pdf"}
-              whileHover={{ 
-                scale: 1.05, 
-                y: -3,
-                boxShadow: "0 0 25px rgba(34, 197, 94, 0.6)"
-              }}
+              whileHover={{ scale: 1.05, y: -3, boxShadow: "0 0 25px rgba(34, 197, 94, 0.6)" }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold text-lg rounded-xl transition-all duration-300 border border-green-400/30 shadow-lg"
-              style={{ 
-                textShadow: '0 1px 2px rgba(0,0,0,0.3)',
-                boxShadow: '0 4px 15px rgba(34, 197, 94, 0.3)'
-              }}
+              className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-black font-bold text-lg rounded-xl transition-all duration-300 border border-green-400/30 shadow-lg"
+              style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)', boxShadow: '0 4px 15px rgba(34, 197, 94, 0.3)' }}
             >
-              <motion.div
-                animate={{ 
-                  y: [0, -2, 0],
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="text-2xl"
-              >
-                📄
-              </motion.div>
+              <motion.div animate={{ y: [0, -2, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="text-2xl">📄</motion.div>
               <span>Download {persona === 'software' ? 'Software' : 'Data'} Resume</span>
-              <motion.div
-                animate={{ 
-                  x: [0, 3, 0],
-                }}
-                transition={{ 
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="text-xl"
-              >
-                ⬇️
-              </motion.div>
+              <motion.div animate={{ x: [0, 3, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }} className="text-xl">⬇️</motion.div>
             </motion.a>
           </motion.div>
         </motion.div>
@@ -159,6 +142,67 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-green-500/20 to-transparent rounded-2xl" />
         </motion.div>
       </div>
+
+      {/* Resume Modal */}
+      <AnimatePresence>
+        {isResumeOpen && (
+          <>
+            {/* Backdrop with blur */}
+            <motion.div
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsResumeOpen(false)}
+            />
+
+            {/* Modal container */}
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 260, damping: 22 }}
+            >
+              <motion.div className="relative w-full max-w-5xl h-[80vh] bg-slate-900/95 rounded-2xl overflow-hidden shadow-2xl border border-slate-700 glass-card">
+                {/* Header */}
+                <div className="absolute top-0 left-0 right-0 flex items-center justify-between p-3 bg-slate-900/80 border-b border-slate-700 z-10">
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <i className="fas fa-file-pdf text-red-400" />
+                    <span className="text-sm">{persona === 'software' ? 'Software' : 'Data'} Resume</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={persona === 'software' ? softwareResumeUrl : dataResumeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1 text-xs rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200"
+                    >
+                      Open in new tab
+                    </a>
+                    <button
+                      onClick={() => setIsResumeOpen(false)}
+                      className="p-2 rounded-md hover:bg-slate-800 text-slate-300"
+                      aria-label="Close resume"
+                    >
+                      <i className="fas fa-times" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* PDF content */}
+                <div className="w-full h-full pt-10">
+                  <iframe
+                    title="Resume"
+                    src={(persona === 'software' ? softwareResumeUrl : dataResumeUrl) + '#view=FitH'}
+                    className="w-full h-full"
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
