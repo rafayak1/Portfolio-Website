@@ -102,12 +102,14 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
           >
             {/* View Resume (opens modal) */}
             <motion.button
+              type="button"
               onClick={() => setIsResumeOpen(true)}
-              whileHover={{ scale: 1.05, y: -3 }}
+              whileHover={{ scale: 1.05, y: -3, boxShadow: "0 0 25px rgba(34, 197, 94, 0.6)" }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-6 py-4 glass-card hover:bg-slate-700/40 text-slate-100 font-semibold text-lg rounded-xl transition-all duration-300 border border-slate-700 shadow-lg"
+              className="inline-flex items-center gap-3 px-6 py-4 bg-transparent text-green-300 font-bold text-lg rounded-xl transition-all duration-300 border border-green-400/50 shadow-lg hover:text-black hover:bg-gradient-to-r hover:from-green-500 hover:to-green-600 hover:border-green-400/30"
+              style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)', boxShadow: '0 4px 12px rgba(34, 197, 94, 0.2)' }}
             >
-              <i className="fas fa-eye text-green-400" />
+              <i className="fas fa-eye" />
               <span>View {persona === 'software' ? 'Software' : 'Data'} Resume</span>
             </motion.button>
 
