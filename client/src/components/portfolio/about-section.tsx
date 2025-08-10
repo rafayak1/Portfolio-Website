@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import profileImage from "@assets/Screenshot 2022-06-29 at 3.33.40 AM_1754628874300.png";
-import dataResumeUrl from "@assets/Resume_1754631812019.pdf";
-import softwareResumeUrl from "@assets/SWE_Resume_1754631812020.pdf";
+import dataResumeUrl from "@assets/Data_Resume.pdf";
+import softwareResumeUrl from "@assets/SWE_Resume.pdf";
 
 interface AboutSectionProps {
   persona: 'software' | 'data';
@@ -100,7 +100,7 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
           >
             <motion.a
               href={persona === 'software' ? softwareResumeUrl : dataResumeUrl}
-              download={persona === 'software' ? "Abdul_Rafay_SWE_Resume.pdf" : "Abdul_Rafay_Data_Resume.pdf"}
+              download={persona === 'software' ? "Rafay_SWE_Resume.pdf" : "Rafay_Data_Resume.pdf"}
               whileHover={{ 
                 scale: 1.05, 
                 y: -3,
