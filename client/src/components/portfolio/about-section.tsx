@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import profileImage from "@assets/Screenshot 2022-06-29 at 3.33.40 AM_1754628874300.png";
 import dataResumeUrl from "@assets/Data_Resume.pdf";
 import softwareResumeUrl from "@assets/SWE_Resume.pdf";
 
@@ -13,6 +12,8 @@ interface AboutSectionProps {
 export function AboutSection({ persona, isMobile }: AboutSectionProps) {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  // Use public asset path for the profile image to avoid module import issues
+  const profileImage = "/Screenshot%202022-06-29%20at%203.33.40%20AM_1754628874300.png";
   const viewBtnRef = useRef<HTMLButtonElement | null>(null);
   const modalRef = useRef<HTMLDivElement | null>(null);
   const prevActiveElementRef = useRef<HTMLElement | null>(null);
