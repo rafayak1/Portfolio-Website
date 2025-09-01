@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import databuffImage from "@assets/80fadb14dafb36ce23513171477d2437bf2defc43f3205a8661e9546547bc5f2_1754629809767.png";
+import buffmarketImage from "@assets/buffmarket-landing.png";
 
 interface ProjectsGalleryProps {
   persona: 'software' | 'data';
@@ -16,6 +17,7 @@ interface Project {
   hover?: string;
   github?: string;
   demo?: string;
+  demoText?: string;
 }
 
 export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
@@ -23,6 +25,15 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   const softwareProjects: Project[] = [
+    {
+      title: "BuffMarket",
+      description: "A marketplace platform specifically designed for University of Colorado Boulder students to buy and sell items within the campus community.",
+      image: buffmarketImage,
+      tags: ["Next.js", "TypeScript", "React", "Prisma", "PostgreSQL", "Firebase Auth", "Tailwind CSS", "Nodemailer"],
+      hover: "🎓 Where Buffs Buy & Sell - The CU Boulder Student Marketplace",
+      demo: "https://buffmarket.netlify.app",
+      demoText: "Visit Marketplace",
+    },
     {
       title: "DataBuff",
       description: "An AI-powered data preprocessing platform where users chat with 'BuffBot' to transform raw datasets into insights using natural language commands.",
@@ -38,6 +49,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
       tags: ["Django", "PostgreSQL", "RESTful APIs", "Search Optimization", "Database Design"],
       hover: "✈️ Book your next adventure...",
       demo: "https://raasta.com.pk/",
+      demoText: "Book Your Trip",
     },
   ];
 
@@ -216,7 +228,7 @@ export function ProjectsGallery({ persona, isMobile }: ProjectsGalleryProps) {
                         className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2"
                       >
                         <i className="fas fa-external-link-alt" />
-                        Live Demo
+                        {project.demoText || "Live Demo"}
                       </motion.a>
                     )}
                   </motion.div>
