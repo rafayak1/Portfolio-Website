@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import databuffImage from "@assets/80fadb14dafb36ce23513171477d2437bf2defc43f3205a8661e9546547bc5f2_1754629809767.png";
-import buffmarketImage from "@assets/buffmarket-landing.png";
+import buffmarketImage from "@assets/buffmarket-landing-min.png";
 
 interface ProjectsGalleryProps {
   persona: 'software' | 'data';
