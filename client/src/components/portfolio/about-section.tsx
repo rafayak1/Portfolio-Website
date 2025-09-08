@@ -112,7 +112,7 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
 
   const softwareContent = {
     title: "About Me",
-    description: "Master's student in Computer Science at CU-Boulder who loves crafting AI-powered products that feel magical and fast. I believe in building software that doesn't just work—it delights.",
+    description: "Master's student in Computer Science at CU-Boulder and currently a Data Engineer Intern at Babbl Labs. I love crafting AI-powered products that feel magical and fast. I believe in building software that doesn't just work—it delights.",
     badges: [
       { icon: "🎓", text: "CU-Boulder", color: "blue" },
       { icon: "⭐", text: "4.0 CGPA", color: "yellow" },
@@ -124,7 +124,7 @@ export function AboutSection({ persona, isMobile }: AboutSectionProps) {
 
   const dataContent = {
     title: "About Me",
-    description: "Master's student in Computer Science at CU-Boulder, focused on turning massive datasets into realtime insights and building reliable pipelines that scale.",
+    description: "Master's student in Computer Science at CU-Boulder and currently a Data Engineer Intern at Babbl Labs. I'm focused on turning massive datasets into realtime insights and building reliable pipelines that scale.",
     badges: [
       { icon: "🎓", text: "CU-Boulder", color: "violet" },
       { icon: "⭐", text: "4.0 CGPA", color: "yellow" },

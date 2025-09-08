@@ -10,6 +10,7 @@ interface ExperienceTimelineProps {
 interface Experience {
   company: string;
   role: string;
+  timeline: string;
   description: string[];
   tags: string[];
   icon: string;
@@ -23,6 +24,7 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
     {
       company: "Meta",
       role: "Data Engineer Intern",
+      timeline: "May 2025 - August 2025",
       description: [
         "Built and deployed scalable batch pipelines using dbt, Apache Spark, Apache Airflow, and Apache Hive to process over 2B records daily",
         "Collaborated with research scientists to productionize LLM features, improving model recall by 9% and reducing query latency by 35%", 
@@ -41,6 +43,7 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
     {
       company: "Volga Partners",
       role: "Software Engineer",
+      timeline: "May 2023 - August 2023",
       description: [
         "Engineered an AI SaaS product, Amethyst, utilizing LangChain and OpenAI LLMs, efficiently processing up to 10,000+ user queries daily",
         "Collaborated with a cross-functional team following Agile methodologies (Scrum) to deliver modular data import and Q&A features",
@@ -59,8 +62,27 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
 
   const dataExperience: Experience[] = [
     {
+      company: "Babbl Labs",
+      role: "Data Engineer Intern",
+      timeline: "August 2025 - Present",
+      description: [
+        "Building scalable data infrastructure and ETL pipelines to process real-time conversational data",
+        "Developing machine learning models for natural language processing and sentiment analysis",
+        "Implementing data quality monitoring and automated testing frameworks",
+        "Collaborating with cross-functional teams to deliver data-driven insights and analytics solutions"
+      ],
+      tags: ["Real-time Data", "NLP", "ML Infrastructure"],
+      icon: "fas fa-comments",
+      metrics: [
+        { value: 100, label: "Data Quality Improvement", suffix: "%" },
+        { value: 50, label: "Processing Speed Increase", suffix: "%" },
+        { value: 75, label: "Pipeline Reliability", suffix: "%" },
+      ],
+    },
+    {
       company: "Meta",
       role: "Data Engineer Intern",
+      timeline: "May 2025 - August 2025",
       description: [
         "Built and deployed scalable batch pipelines using dbt, Apache Spark, Apache Airflow, and Apache Hive to process TBs of records daily",
         "Collaborated with research scientists to productionize LLM features, improving model recall by 9% and reducing query latency by 35%",
@@ -79,6 +101,7 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
     {
       company: "Infolyze Solutions",
       role: "Data Engineer",
+      timeline: "May 2024 - August 2024",
       description: [
         "Engineered scalable data infrastructures for 6 client projects using Python, Google Cloud, and AWS, processing over 10 GB of data daily",
         "Optimized ETL processes with Apache Airflow, reducing data integration time by 30%", 
@@ -142,7 +165,7 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
                     initial={{ y: 20, opacity: 0 }}
                     animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
-                    className="text-2xl font-semibold text-slate-50 mb-2"
+                    className="text-2xl font-semibold text-slate-50 mb-1"
                   >
                     {exp.company}
                   </motion.h3>
@@ -150,10 +173,19 @@ export function ExperienceTimeline({ persona, isMobile }: ExperienceTimelineProp
                   <motion.p
                     initial={{ y: 20, opacity: 0 }}
                     animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-                    className={`${persona === 'software' ? 'text-blue-400' : 'text-violet-400'} mb-4`}
+                    transition={{ duration: 0.6, delay: index * 0.2 + 0.25 }}
+                    className={`${persona === 'software' ? 'text-blue-400' : 'text-violet-400'} mb-1`}
                   >
                     {exp.role}
+                  </motion.p>
+                  
+                  <motion.p
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                    className="text-slate-400 text-sm mb-4"
+                  >
+                    {exp.timeline}
                   </motion.p>
                   
                   <motion.div
